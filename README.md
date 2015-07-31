@@ -1,25 +1,40 @@
 # Ember-cli-deploy-display-revisions
 
-This README outlines the details of collaborating on this Ember addon.
+Display a list of deployed revisions using [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy). This plugin is for `ember-cli-deploy` >= 0.5.0.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `npm install ember-cli-deploy-display-revisions`
 
-## Running
+## Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+* `ember deploy:list <environment>` to list the latest 10 revisions
+* `ember deploy:list --amount <N> <environment>` to list the latest <N> revisions
 
-## Running Tests
+## Passing revisions
 
-* `ember test`
-* `ember test --server`
+`ember-cli-deploy-display-revisions` expects the `fetchRevisions` to be implemented by your index plugin, filling the `revisions` variable in context in the following format:
 
-## Building
+```
+[
+  {
+    revision: 'abc123', // mandatory
+    version: 'v1',
+    timestamp: 1438232435000, // milliseconds since epoch
+    deployer: 'cats'
+  },
+  {
+    revision: 'def456',
+    version: 'v2',
+    timestamp: 1032123128000,
+    deployer: 'dogs',
+    active: true // indicate whether this revision is activated
+  }
+]
+```
 
-* `ember build`
+Omitted keys are not displayed in listing the results.
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+## Tests
+
+* ember test

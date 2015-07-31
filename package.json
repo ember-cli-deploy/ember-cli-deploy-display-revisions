@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-deploy-display-revisions",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Display a list of deployed revisions using ember-cli-deploy.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -9,9 +9,9 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember try:testall"
+    "test": "node tests/runner.js"
   },
-  "repository": "",
+  "repository": "https://github.com/duizendnegen/ember-cli-deploy-display-revisions",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -19,6 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
+    "chai": "^2.2.0",
+    "chai-as-promised": "^5.0.0",
     "ember-cli": "0.2.3",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-content-security-policy": "0.4.0",
@@ -31,13 +33,18 @@
     "ember-data": "1.0.0-beta.16.1",
     "ember-export-application-global": "^1.0.2",
     "ember-disable-prototype-extensions": "^1.0.0",
-    "ember-try": "0.0.4"
+    "ember-try": "0.0.4",
+    "glob": "^5.0.5",
+    "mocha": "^2.2.4"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-cli-deploy-plugin"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.0.0"
+    "ember-cli-babel": "^5.0.0",
+    "ember-cli-deploy-plugin": "^0.1.2",
+    "moment": "2.10.6"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
