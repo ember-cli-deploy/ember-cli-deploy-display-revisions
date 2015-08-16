@@ -4,7 +4,7 @@ Display a list of deployed revisions using [ember-cli-deploy](https://github.com
 
 ## Installation
 
-* `npm install ember-cli-deploy-display-revisions`
+* `ember install ember-cli-deploy-display-revisions`
 
 ## Usage
 
