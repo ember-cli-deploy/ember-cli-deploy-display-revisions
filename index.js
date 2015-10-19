@@ -47,7 +47,7 @@ module.exports = {
           var value = revision[key.name] ? revision[key.name] : "";
 
           if(key.name === 'timestamp') {
-            value = moment(value).format("YYYY/MM/DD HH:MM:SS");
+            value = moment(value).format("YYYY/MM/DD HH:mm:ss");
           }
 
           if(key.maxLength !== -1) {

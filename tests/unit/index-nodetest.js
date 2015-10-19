@@ -1,9 +1,10 @@
 /*jshint globalstrict: true*/
 'use strict';
 
-var RSVP = require('ember-cli/lib/ext/promise');
+var RSVP   = require('ember-cli/lib/ext/promise');
+var moment = require('moment');
 
-var assert  = require('ember-cli/tests/helpers/assert');
+var assert = require('ember-cli/tests/helpers/assert');
 
 describe('displayRevisions plugin', function() {
   var subject, mockUi, config;
@@ -148,10 +149,14 @@ describe('displayRevisions plugin', function() {
       assert.equal(messages.length, 0);
     });
 
-    it('transforms timestamps to human-readable dates', function() {
+    it('transforms timestamps to human-readable dates (YYYY/MM/DD HH:mm:ss)', function() {
       plugin.displayRevisions(context);
+      var utcOffset      = moment().utcOffset();
+      var expectedFormat = ('YYYY/MM/DD HH:mm:ss');
+      var expectedDate   = moment(1438232435000).utcOffset(utcOffset).format(expectedFormat);
+
       var messages = mockUi.messages.reduce(function(previous, current) {
-        if (current.indexOf("2015/07") !== -1) {
+        if (current.indexOf(expectedDate) !== -1) {
           previous.push(current);
         }
 
