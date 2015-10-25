@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-display-revisions",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Display a list of deployed revisions using ember-cli-deploy.",
   "directories": {
     "doc": "doc",
