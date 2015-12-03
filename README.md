@@ -1,5 +1,7 @@
 # Ember-cli-deploy-display-revisions
 
+[![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-display-revisions.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
+
 Display a list of deployed revisions using [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy). This plugin is for `ember-cli-deploy` >= 0.5.0.
 
 ## Installation
