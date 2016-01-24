@@ -114,13 +114,15 @@ describe('displayRevisions plugin', function() {
         commandOptions: {
           amount: 3
         },
-        revisions: [
-          { revision: "rev:abcdef", timestamp: 1438232435000, deployer: "My Hamster"},
-          { revision: "rev:defghi", timestamp: 1032123125000, deployer: "My Hamster", active: true},
-          { revision: "rev:jklmno", timestamp: 1032123128000, deployer: "My Hamster"},
-          { revision: "rev:qrstuv", timestamp: 1032123155000, deployer: "My Hamster"},
-          { revision: "rev:xyz123", timestamp: 1032123123000, deployer: "My Hamster"}
-        ]
+        revisionData: {
+          revisions: [
+            { revision: "rev:abcdef", timestamp: 1438232435000, deployer: "My Hamster"},
+            { revision: "rev:defghi", timestamp: 1032123125000, deployer: "My Hamster", active: true},
+            { revision: "rev:jklmno", timestamp: 1032123128000, deployer: "My Hamster"},
+            { revision: "rev:qrstuv", timestamp: 1032123155000, deployer: "My Hamster"},
+            { revision: "rev:xyz123", timestamp: 1032123123000, deployer: "My Hamster"}
+          ]
+        }
       };
       plugin.beforeHook(context);
       plugin.configure(context);
