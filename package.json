@@ -43,7 +43,7 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0",
-    "ember-cli-deploy-plugin": "0.2.0",
+    "ember-cli-deploy-plugin": "^0.2.1",
     "moment": "2.10.6"
   },
   "ember-addon": {
