@@ -2,7 +2,7 @@
 
 [![](https://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/plugins/ember-cli-deploy-display-revisions.svg)](http://ember-cli-deploy.github.io/ember-cli-deploy-version-badges/)
 
-Display a list of deployed revisions using [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy). This plugin is for `ember-cli-deploy` >= 0.5.0.
+Display a list of deployed revisions using [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy). This plugin is for `ember-cli-deploy` >= 0.6.0.
 
 ## Installation
 
@@ -15,7 +15,7 @@ Display a list of deployed revisions using [ember-cli-deploy](https://github.com
 
 ## Passing revisions
 
-`ember-cli-deploy-display-revisions` expects the `fetchRevisions` to be implemented by your index plugin, filling the `revisions` variable in context in the following format:
+`ember-cli-deploy-display-revisions` expects the `fetchRevisions` to be implemented by your index plugin, filling the `revisionData.revisions` variable in context in the following format:
 
 ```
 [

@@ -18,12 +18,12 @@ module.exports = {
       },
 
       displayRevisions: function(context) {
-        if(!context.revisions) {
+        if(!context.revisionData || !context.revisionData.revisions) {
           this.log("Could not display latest revisions because no revisions were found in context.", {color: 'yellow'});
           return;
         }
 
-        var revisions = context.revisions.slice(0, this.readConfig("amount"));
+        var revisions = context.revisionData.revisions.slice(0, this.readConfig("amount"));
 
         var keys = this._getKeys(revisions);
 
