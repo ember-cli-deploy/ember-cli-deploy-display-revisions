@@ -18,6 +18,7 @@ module.exports = {
       },
 
       displayRevisions: function(context) {
+        console.log(context.revisions);
         if(!context.revisions) {
           this.log("Could not display latest revisions because no revisions were found in context.", {color: 'yellow'});
           return;
@@ -68,7 +69,12 @@ module.exports = {
         this.log(row);
       },
       _getKeys: function(revisions) {
-        var keys = [{name: 'version', maxLength: 7}, {name: 'timestamp', maxLength: 19}, {name: 'deployer', maxLength: 10}, {name: 'revision', maxLength: -1}];
+        var keys = [
+          {name: 'version', maxLength: 7},
+          {name: 'timestamp', maxLength: 19},
+          {name: 'deployer', maxLength: 10},
+          {name: 'revision', maxLength: -1}
+        ];
         var presentKeys = [];
         keys.forEach(function(key) {
           if(this._hasKey(key.name, revisions)) {
