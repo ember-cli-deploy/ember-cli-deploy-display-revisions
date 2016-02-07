@@ -152,9 +152,8 @@ describe('displayRevisions plugin', function() {
 
     it('transforms timestamps to human-readable dates (YYYY/MM/DD HH:mm:ss)', function() {
       plugin.displayRevisions(context);
-      var utcOffset      = moment().utcOffset();
       var expectedFormat = ('YYYY/MM/DD HH:mm:ss');
-      var expectedDate   = moment(1438232435000).utcOffset(utcOffset).format(expectedFormat);
+      var expectedDate   = moment(1438232435000).format(expectedFormat);
 
       var messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf(expectedDate) !== -1) {
