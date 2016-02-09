@@ -18,7 +18,6 @@ module.exports = {
       },
 
       displayRevisions: function(context) {
-        console.log(context.revisions);
         if(!context.revisions) {
           this.log("Could not display latest revisions because no revisions were found in context.", {color: 'yellow'});
           return;
@@ -62,7 +61,7 @@ module.exports = {
             row += " ";
           }
           if(key !== lastKey) {
-            row += "|"
+            row += "|";
           }
         });
 
@@ -83,7 +82,7 @@ module.exports = {
         }.bind(this));
         return presentKeys;
       },
-      _displayHeader: function(keys, revisions) {
+      _displayHeader: function(keys) {
         var keyHeader = " ";
         var lastKey = keys[keys.length - 1];
 
@@ -98,7 +97,7 @@ module.exports = {
 
           // revision hash needs an unknown amount of space, don't display closing |
           if(key !== lastKey) {
-            keyHeader += "|"
+            keyHeader += "|";
           }
         });
         this.log(keyHeader);
