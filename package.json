@@ -36,6 +36,7 @@
     "ember-export-application-global": "^1.0.2",
     "ember-try": "0.0.4",
     "glob": "^5.0.5",
+    "lodash": "^3.10.1",
     "mocha": "^2.2.4"
   },
   "keywords": [
@@ -43,8 +44,10 @@
     "ember-cli-deploy-plugin"
   ],
   "dependencies": {
+    "cli-table2": "^0.2.0",
+    "core-object": "^2.0.0",
     "ember-cli-babel": "^5.0.0",
-    "ember-cli-deploy-plugin": "^0.2.1",
+    "ember-cli-deploy-plugin": "^0.2.3",
     "moment": "2.10.6"
   },
   "ember-addon": {
