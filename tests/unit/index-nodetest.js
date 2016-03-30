@@ -61,7 +61,7 @@ describe('displayRevisions plugin', function() {
           return previous;
         }, []);
 
-        assert.equal(messages.length, 1);
+        assert.equal(messages.length, 2);
       });
 
       it('adds default config to the config object', function() {
@@ -95,8 +95,55 @@ describe('displayRevisions plugin', function() {
 
           return previous;
         }, []);
-        assert.equal(messages.length, 0);
+        assert.equal(messages.length, 1);
       });
+    });
+  });
+  describe('displayRevisions hook with revisionData', function() {
+    var plugin, context;
+
+    beforeEach(function() {
+      plugin = subject.createDeployPlugin({
+        name: 'display-revisions'
+      });
+
+      context = {
+        ui: mockUi,
+        config: { },
+        commandOptions: {
+          amount: 3
+        },
+        revisions: [
+          { revision: "rev:first", revisionData: {revisionKey: 'rev:first', scm: {sha: '99ee96e7ee7d36717524bd6489d2eff966c83c3d', email: 'mattia@mail.com', branch: 'foo'}, timestamp: 1032123125000}},
+          { revision: "rev:second", revisionData: {revisionKey: 'rev:second', scm: {sha: 'eeee96e7ee7d36717524bd6489d2eff966c83c3d', email: 'aaron@mail.com', branch: 'bar'}, timestamp: 1032123127000}},
+          { revision: "rev:third", revisionData: {revisionKey: 'rev:third', scm: {sha: 'ffee96e7ee7d36717524bd6489d2eff966c83c3d', email: 'luke@mail.com', branch: 'foo'}, timestamp: 1032123128000}},
+        ]
+      };
+      plugin.beforeHook(context);
+      plugin.configure(context);
+    });
+
+    it('lists revisions', function() {
+      plugin.displayRevisions(context);
+      var messages = mockUi.messages.reduce(function(previous, current) {
+        if (current.indexOf("rev:") !== -1) {
+          previous.push(current);
+        }
+
+        return previous;
+      }, []);
+      assert.equal(messages.length, 1); // logs a single message as table
+      var message = messages[0];
+      assert.match(message, /RevisionKey/);
+      assert.match(message, /Commit/);
+      assert.match(message, /User/);
+      assert.match(message, /Branch/);
+
+      var lines = message.split("\n");
+      assert.equal(lines.length, 4); // logs headers and 3 revisions
+      var revisionLine = lines[1];
+      assert.match(revisionLine, /rev:first/);
+      assert.match(revisionLine, /mattia@mail.com/);
     });
   });
 

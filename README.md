@@ -8,6 +8,31 @@ Display a list of deployed revisions using [ember-cli-deploy](https://github.com
 
 * `ember install ember-cli-deploy-display-revisions`
 
+## Configuration Options
+
+### Defaults
+
+```
+  ENV['display-revisions'] = {
+    amount: 10,
+    revisions: function(context) {
+      return context.revisions;
+    }
+  }
+```
+
+### amount
+
+Number of revisions displayed in the results table
+
+*Default:* `10`
+
+### revisions
+
+The data to be displayed
+
+*Default:* `context.revisions`, usually received from `fetchRevisions`
+
 ## Usage
 
 * `ember deploy:list <environment>` to list the latest 10 revisions
