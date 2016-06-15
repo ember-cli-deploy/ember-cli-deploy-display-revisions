@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.2.2](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/0.2.2) (2016-06-15)
+[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/compare/v0.2.1...0.2.2)
+
+- Resolve core-object deprecation warnings. [\#12](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/12) ([blimmer](https://github.com/blimmer))
+
 ## [0.2.1](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/0.2.1) (2016-04-01)
 [Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/compare/v0.2.0...0.2.1)
 
