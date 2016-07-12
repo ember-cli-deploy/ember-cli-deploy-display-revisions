@@ -4,7 +4,6 @@
 var DeployPluginBase = require('ember-cli-deploy-plugin');
 var ScmTable = require('./lib/scm-table');
 var LegacyTable = require('./lib/legacy-table');
-var _ = require('lodash');
 
 module.exports = {
   name: 'ember-cli-deploy-display-revisions',
@@ -33,15 +32,17 @@ module.exports = {
 
         revisions = revisions.slice(0, this.readConfig("amount"));
 
-        var hasRevisionData = _.every(revisions, 'revisionData');
+        var hasRevisionData = revisions.reduce(function(prev, current) {
+          return !prev ? false : !!current.revisionData;
+        }, true);
 
         if (hasRevisionData) {
           table = new ScmTable(this, revisions);
-          table.display();
         } else {
           table = new LegacyTable(this, revisions);
-          table.display();
         }
+        
+        table.display();
       }
     });
 
