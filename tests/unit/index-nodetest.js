@@ -1,10 +1,13 @@
 /*jshint globalstrict: true*/
 'use strict';
 
-var RSVP   = require('ember-cli/lib/ext/promise');
 var moment = require('moment');
 
-var assert = require('ember-cli/tests/helpers/assert');
+var chai  = require('chai');
+var chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
+
+var assert = chai.assert;
 
 describe('displayRevisions plugin', function() {
   var subject, mockUi, config;
