@@ -1,4 +1,4 @@
-/*jshint globalstrict: true*/
+/*eslint-env node*/
 'use strict';
 
 var moment = require('moment');
