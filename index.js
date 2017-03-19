@@ -1,4 +1,4 @@
-/* jshint node: true */
+/*eslint-env node*/
 'use strict';
 
 var DeployPluginBase = require('ember-cli-deploy-plugin');
@@ -22,7 +22,7 @@ module.exports = {
         }
       },
 
-      displayRevisions: function(context) {
+      displayRevisions: function(/* context */) {
         var table;
         var revisions = this.readConfig('revisions');
         if(!revisions || revisions.length === 0) {
@@ -41,7 +41,7 @@ module.exports = {
         } else {
           table = new LegacyTable(this, revisions);
         }
-        
+
         table.display();
       }
     });

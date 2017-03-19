@@ -1,7 +1,4 @@
 module.exports = {
-  "plugins": [
-    "mocha"
-  ],
   globals: {
     "describe": true,
     "beforeEach": true,
