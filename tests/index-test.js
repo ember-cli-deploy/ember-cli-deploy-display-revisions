@@ -1,8 +1,7 @@
-/*jshint globalstrict: true*/
+/*eslint-env node*/
 'use strict';
 
 var moment = require('moment');
-
 var chai  = require('chai');
 var chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
@@ -13,7 +12,7 @@ describe('displayRevisions plugin', function() {
   var subject, mockUi, config;
 
   beforeEach(function() {
-    subject = require('../../index');
+    subject = require('../index');
     mockUi = {
       verbose: true,
       messages: [],
