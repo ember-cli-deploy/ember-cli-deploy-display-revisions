@@ -5,6 +5,6 @@ module.exports = {
     "it": true
   },
   env: {
-    embertest: true
+    mocha: true
   }
 };

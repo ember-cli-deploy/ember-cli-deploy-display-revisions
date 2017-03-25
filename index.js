@@ -1,4 +1,3 @@
-/*eslint-env node*/
 'use strict';
 
 var DeployPluginBase = require('ember-cli-deploy-plugin');
