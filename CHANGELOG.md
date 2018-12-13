@@ -1,6 +1,13 @@
 # Change Log
 
-## [v1.0.0](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/v1.0.0) (2017-03-25)
+## [1.0.1](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/1.0.1) (2018-12-12)
+[Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/compare/v1.0.0...1.0.1)
+
+**Merged pull requests:**
+
+- chore: migrate to cli-table3 [\#21](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/21) ([DanielRuf](https://github.com/DanielRuf))
+
+## [v1.0.0](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/v1.0.0) (2017-04-06)
 [Full Changelog](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/compare/v1.0.0-beta.0...v1.0.0)
 
 No changes from 1.0.0-beta.0
