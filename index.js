@@ -16,6 +16,10 @@ module.exports = {
           return context.commandOptions.amount || 10;
         },
 
+        activeOnly: function(context) {
+          return context.commandOptions.activeOnly;
+        },
+
         revisions: function(context) {
           return context.revisions;
         }
@@ -30,6 +34,12 @@ module.exports = {
         }
 
         revisions = revisions.slice(0, this.readConfig("amount"));
+
+        if (this.readConfig('activeOnly')) {
+          revisions = revisions.filter(function(revision) {
+            return revision.active;
+          });
+        }
 
         var hasRevisionData = revisions.reduce(function(prev, current) {
           return !prev ? false : !!current.revisionData;

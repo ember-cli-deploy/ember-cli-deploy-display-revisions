@@ -186,6 +186,19 @@ describe('displayRevisions plugin', function() {
       assert.equal(messages.length, 3);
     });
 
+    it('lists only the active revision when specified', function() {
+      context.commandOptions.activeOnly = true;
+      plugin.displayRevisions(context);
+      var messages = mockUi.messages.reduce(function(previous, current) {
+        if (current.indexOf("rev:") !== -1) {
+          previous.push(current);
+        }
+
+        return previous;
+      }, []);
+      assert.equal(messages.length, 1);
+    });
+
     it('skips unset keys', function() {
       plugin.displayRevisions(context);
       var messages = mockUi.messages.reduce(function(previous, current) {
