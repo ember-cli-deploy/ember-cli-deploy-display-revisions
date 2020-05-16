@@ -1,29 +1,29 @@
 'use strict';
 
-var DeployPluginBase = require('ember-cli-deploy-plugin');
-var ScmTable = require('./lib/scm-table');
-var LegacyTable = require('./lib/legacy-table');
+const DeployPluginBase = require('ember-cli-deploy-plugin');
+const ScmTable = require('./lib/scm-table');
+const LegacyTable = require('./lib/legacy-table');
 
 module.exports = {
   name: 'ember-cli-deploy-display-revisions',
 
-  createDeployPlugin: function(options) {
-    var DeployPlugin = DeployPluginBase.extend({
+  createDeployPlugin(options) {
+    let DeployPlugin = DeployPluginBase.extend({
       name: options.name,
 
       defaultConfig: {
-        amount: function(context) {
+        amount(context) {
           return context.commandOptions.amount || 10;
         },
 
-        revisions: function(context) {
+        revisions(context) {
           return context.revisions;
         }
       },
 
-      displayRevisions: function(/* context */) {
-        var table;
-        var revisions = this.readConfig('revisions');
+      displayRevisions(/* context */) {
+        let table;
+        let revisions = this.readConfig('revisions');
         if(!revisions || revisions.length === 0) {
           this.log("Could not display latest revisions because no revisions were found in context.", {color: 'yellow'});
           return;
@@ -31,7 +31,7 @@ module.exports = {
 
         revisions = revisions.slice(0, this.readConfig("amount"));
 
-        var hasRevisionData = revisions.reduce(function(prev, current) {
+        let hasRevisionData = revisions.reduce(function(prev, current) {
           return !prev ? false : !!current.revisionData;
         }, true);
 
