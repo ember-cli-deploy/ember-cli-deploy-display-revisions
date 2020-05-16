@@ -1,3 +1,20 @@
+## v2.0.0 (2020-05-16)
+
+#### :boom: Breaking Change
+* [#24](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/24) [BREAKING] Require node 10 or higher, and update ember-cli ([@lukemelia](https://github.com/lukemelia))
+
+#### :house: Internal
+* [#34](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/34) Bump js-yaml from 3.8.2 to 3.13.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#31](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/31) Switch to release-it from ember-cli-release ([@lukemelia](https://github.com/lukemelia))
+* [#28](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/28) Bump is-my-json-valid from 2.16.0 to 2.20.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#27](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/27) Bump js-yaml from 3.8.2 to 3.13.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#25](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/25) Bump stringstream from 0.0.5 to 0.0.6 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#30](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/30) Update JS to use more recent ECMAScript patterns ([@lukemelia](https://github.com/lukemelia))
+* [#29](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/29) Update to dependencies to latest versions ([@lukemelia](https://github.com/lukemelia))
+
+#### Committers: 1
+- Luke Melia ([@lukemelia](https://github.com/lukemelia))
+
 # Change Log
 
 ## [1.0.1](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/tree/1.0.1) (2018-12-12)

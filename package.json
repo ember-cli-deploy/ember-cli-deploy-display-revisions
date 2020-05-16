@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-display-revisions",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Display a list of deployed revisions using ember-cli-deploy.",
   "keywords": [
     "ember-addon",
@@ -14,6 +14,7 @@
     "test": "tests"
   },
   "scripts": {
+    "release": "release-it",
     "test": "node tests/runner.js && ./node_modules/.bin/eslint index.js lib/* tests/*"
   },
   "dependencies": {
