@@ -1,29 +1,29 @@
 'use strict';
 
-var moment = require('moment');
-var chai  = require('chai');
-var chaiAsPromised = require("chai-as-promised");
+const moment = require('moment');
+const chai  = require('chai');
+const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
-var assert = chai.assert;
+const assert = chai.assert;
 
 describe('displayRevisions plugin', function() {
-  var subject, mockUi, config;
+  let subject, mockUi, config;
 
   beforeEach(function() {
     subject = require('../index');
     mockUi = {
       verbose: true,
       messages: [],
-      write: function() { },
-      writeLine: function(message) {
+      write() { },
+      writeLine(message) {
         this.messages.push(message);
       }
     };
   });
 
   it('has a name', function() {
-    var plugin = subject.createDeployPlugin({
+    let plugin = subject.createDeployPlugin({
       name: 'test-plugin'
     });
 
@@ -31,7 +31,7 @@ describe('displayRevisions plugin', function() {
   });
 
   it('implements the correct hooks', function() {
-    var plugin = subject.createDeployPlugin({
+    let plugin = subject.createDeployPlugin({
       name: 'test-plugin'
     });
 
@@ -39,7 +39,7 @@ describe('displayRevisions plugin', function() {
   });
 
   describe('configure hook', function() {
-    var plugin, context;
+    let plugin, context;
     describe('without providing config', function () {
       beforeEach(function() {
         config = { };
@@ -54,7 +54,7 @@ describe('displayRevisions plugin', function() {
       });
       it('warns about missing optional config', function() {
         plugin.configure(context);
-        var messages = mockUi.messages.reduce(function(previous, current) {
+        let messages = mockUi.messages.reduce(function(previous, current) {
           if (/- Missing config:\s.*, using default:\s/.test(current)) {
             previous.push(current);
           }
@@ -89,7 +89,7 @@ describe('displayRevisions plugin', function() {
       });
       it('does not warn about missing optional config', function() {
         plugin.configure(context);
-        var messages = mockUi.messages.reduce(function(previous, current) {
+        let messages = mockUi.messages.reduce(function(previous, current) {
           if (/- Missing config:\s.*, using default:\s/.test(current)) {
             previous.push(current);
           }
@@ -101,7 +101,7 @@ describe('displayRevisions plugin', function() {
     });
   });
   describe('displayRevisions hook with revisionData', function() {
-    var plugin, context;
+    let plugin, context;
 
     beforeEach(function() {
       plugin = subject.createDeployPlugin({
@@ -126,7 +126,7 @@ describe('displayRevisions plugin', function() {
 
     it('lists revisions', function() {
       plugin.displayRevisions(context);
-      var messages = mockUi.messages.reduce(function(previous, current) {
+      let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf("rev:") !== -1) {
           previous.push(current);
         }
@@ -134,22 +134,22 @@ describe('displayRevisions plugin', function() {
         return previous;
       }, []);
       assert.equal(messages.length, 1); // logs a single message as table
-      var message = messages[0];
+      let message = messages[0];
       assert.match(message, /RevisionKey/);
       assert.match(message, /Commit/);
       assert.match(message, /User/);
       assert.match(message, /Branch/);
 
-      var lines = message.split("\n");
+      let lines = message.split("\n");
       assert.equal(lines.length, 4); // logs headers and 3 revisions
-      var revisionLine = lines[1];
+      let revisionLine = lines[1];
       assert.match(revisionLine, /rev:first/);
       assert.match(revisionLine, /mattia@mail.com/);
     });
   });
 
   describe('displayRevisions hook', function() {
-    var plugin, context;
+    let plugin, context;
 
     beforeEach(function() {
       plugin = subject.createDeployPlugin({
@@ -176,7 +176,7 @@ describe('displayRevisions plugin', function() {
 
     it('lists revisions limited by the amount specified', function() {
       plugin.displayRevisions(context);
-      var messages = mockUi.messages.reduce(function(previous, current) {
+      let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf("rev:") !== -1) {
           previous.push(current);
         }
@@ -188,7 +188,7 @@ describe('displayRevisions plugin', function() {
 
     it('skips unset keys', function() {
       plugin.displayRevisions(context);
-      var messages = mockUi.messages.reduce(function(previous, current) {
+      let messages = mockUi.messages.reduce(function(previous, current) {
         if (/ version /.test(current)) {
           previous.push(current);
         }
@@ -200,10 +200,10 @@ describe('displayRevisions plugin', function() {
 
     it('transforms timestamps to human-readable dates (YYYY/MM/DD HH:mm:ss)', function() {
       plugin.displayRevisions(context);
-      var expectedFormat = ('YYYY/MM/DD HH:mm:ss');
-      var expectedDate   = moment(1438232435000).format(expectedFormat);
+      let expectedFormat = ('YYYY/MM/DD HH:mm:ss');
+      let expectedDate   = moment(1438232435000).format(expectedFormat);
 
-      var messages = mockUi.messages.reduce(function(previous, current) {
+      let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf(expectedDate) !== -1) {
           previous.push(current);
         }
@@ -215,7 +215,7 @@ describe('displayRevisions plugin', function() {
 
     it('highlights the active revision', function() {
       plugin.displayRevisions(context);
-      var messages = mockUi.messages.reduce(function(previous, current) {
+      let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf(">") !== -1) {
           previous.push(current);
         }
