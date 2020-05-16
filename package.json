@@ -6,13 +6,13 @@
     "ember-addon",
     "ember-cli-deploy-plugin"
   ],
+  "repository": "https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions",
   "license": "MIT",
   "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions",
   "scripts": {
     "test": "node tests/runner.js && ./node_modules/.bin/eslint index.js lib/* tests/*"
   },
@@ -27,13 +27,32 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "ember-cli": "^3.18.0",
-    "ember-cli-release": "^1.0.0-beta.2",
     "eslint": "^7.0.0",
     "glob": "^7.1.6",
-    "mocha": "^7.1.2"
+    "mocha": "^7.1.2",
+    "release-it": "^13.6.0",
+    "release-it-lerna-changelog": "^2.3.0"
   },
   "engines": {
     "node": ">= 10"
   },
-  "ember-addon": {}
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "ember-addon": {},
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": false
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
+  }
 }
