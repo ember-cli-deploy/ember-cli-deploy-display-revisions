@@ -1,6 +1,6 @@
 'use strict';
 
-const moment = require('moment');
+const { DateTime } = require('luxon');
 const chai  = require('chai');
 const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
@@ -198,10 +198,10 @@ describe('displayRevisions plugin', function() {
       assert.equal(messages.length, 0);
     });
 
-    it('transforms timestamps to human-readable dates (YYYY/MM/DD HH:mm:ss)', function() {
+    it('transforms timestamps to human-readable dates (yyyy/MM/dd HH:mm:ss)', function() {
       plugin.displayRevisions(context);
-      let expectedFormat = ('YYYY/MM/DD HH:mm:ss');
-      let expectedDate   = moment(1438232435000).format(expectedFormat);
+      let expectedFormat = ('yyyy/MM/dd HH:mm:ss');
+      let expectedDate   = DateTime.fromMillis(1438232435000).toFormat(expectedFormat);
 
       let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf(expectedDate) !== -1) {
