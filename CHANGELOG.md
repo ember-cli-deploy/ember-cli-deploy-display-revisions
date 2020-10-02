@@ -1,3 +1,11 @@
+## v2.1.0 (2020-10-02)
+
+#### :house: Internal
+* [#39](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/39) Switch from Moment to Luxon ([@kpfefferle](https://github.com/kpfefferle))
+
+#### Committers: 1
+- Kevin Pfefferle ([@kpfefferle](https://github.com/kpfefferle))
+
 ## v2.0.0 (2020-05-16)
 
 #### :boom: Breaking Change
