@@ -21,7 +21,7 @@
     "cli-table3": "^0.6.0",
     "core-object": "^3.1.5",
     "ember-cli-deploy-plugin": "^0.2.3",
-    "moment": "^2.25.3",
+    "luxon": "^1.25.0",
     "rsvp": "^4.8.5"
   },
   "devDependencies": {
