@@ -1,3 +1,11 @@
+## v2.1.1 (2020-10-23)
+
+#### :bug: Bug Fix
+* [#41](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/41) Fall back to ISO if timestamp is not milliseconds ([@kpfefferle](https://github.com/kpfefferle))
+
+#### Committers: 1
+- Kevin Pfefferle ([@kpfefferle](https://github.com/kpfefferle))
+
 ## v2.1.0 (2020-10-02)
 
 #### :house: Internal

@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-deploy-display-revisions",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Display a list of deployed revisions using ember-cli-deploy.",
   "keywords": [
     "ember-addon",
