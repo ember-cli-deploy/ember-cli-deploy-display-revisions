@@ -1,3 +1,11 @@
+## v2.1.2 (2020-10-27)
+
+#### :bug: Bug Fix
+* [#42](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/42) Luxon Take 3: Use fromJSDate instead of fromISO for ember-cli-deploy-revision-data ([@kpfefferle](https://github.com/kpfefferle))
+
+#### Committers: 1
+- Kevin Pfefferle ([@kpfefferle](https://github.com/kpfefferle))
+
 ## v2.1.1 (2020-10-23)
 
 #### :bug: Bug Fix
