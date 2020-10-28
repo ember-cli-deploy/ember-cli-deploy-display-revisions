@@ -64,7 +64,7 @@ Omitted keys are not displayed in listing the results.
 
 ## Tests
 
-* yarn test
+* `yarn test`
 
 ## Why `ember build` and `ember test` don't work
 
