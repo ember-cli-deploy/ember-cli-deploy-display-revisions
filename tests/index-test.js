@@ -164,8 +164,8 @@ describe('displayRevisions plugin', function() {
         },
         revisions: [
           { revision: "rev:abcdef", timestamp: 1438232435000, deployer: "My Hamster"},
-          { revision: "rev:defghi", timestamp: 1032123125000, deployer: "My Hamster", active: true},
-          { revision: "rev:jklmno", timestamp: 1032123128000, deployer: "My Hamster"},
+          { revision: "rev:defghi", timestamp: '2002-09-15T20:52:05.000Z', deployer: "My Hamster", active: true},
+          { revision: "rev:jklmno", timestamp: new Date(1032123128000), deployer: "My Hamster"},
           { revision: "rev:qrstuv", timestamp: 1032123155000, deployer: "My Hamster"},
           { revision: "rev:xyz123", timestamp: 1032123123000, deployer: "My Hamster"}
         ]
@@ -198,10 +198,40 @@ describe('displayRevisions plugin', function() {
       assert.equal(messages.length, 0);
     });
 
-    it('transforms timestamps to human-readable dates (yyyy/MM/dd HH:mm:ss)', function() {
+    it('transforms millisecond timestamps to human-readable dates (yyyy/MM/dd HH:mm:ss)', function() {
       plugin.displayRevisions(context);
       let expectedFormat = ('yyyy/MM/dd HH:mm:ss');
       let expectedDate   = DateTime.fromMillis(1438232435000).toFormat(expectedFormat);
+
+      let messages = mockUi.messages.reduce(function(previous, current) {
+        if (current.indexOf(expectedDate) !== -1) {
+          previous.push(current);
+        }
+
+        return previous;
+      }, []);
+      assert.equal(messages.length, 1);
+    });
+
+    it('transforms ISO string timestamps to human-readable dates (yyyy/MM/dd HH:mm:ss)', function() {
+      plugin.displayRevisions(context);
+      let expectedFormat = ('yyyy/MM/dd HH:mm:ss');
+      let expectedDate   = DateTime.fromISO('2002-09-15T20:52:05.000Z').toFormat(expectedFormat);
+
+      let messages = mockUi.messages.reduce(function(previous, current) {
+        if (current.indexOf(expectedDate) !== -1) {
+          previous.push(current);
+        }
+
+        return previous;
+      }, []);
+      assert.equal(messages.length, 1);
+    });
+
+    it('transforms JS Date object timestamps to human-readable dates (yyyy/MM/dd HH:mm:ss)', function() {
+      plugin.displayRevisions(context);
+      let expectedFormat = ('yyyy/MM/dd HH:mm:ss');
+      let expectedDate   = DateTime.fromJSDate(new Date(1032123128000)).toFormat(expectedFormat);
 
       let messages = mockUi.messages.reduce(function(previous, current) {
         if (current.indexOf(expectedDate) !== -1) {
