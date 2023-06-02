@@ -18,24 +18,24 @@
     "test": "node tests/runner.js && ./node_modules/.bin/eslint index.js lib/* tests/*"
   },
   "dependencies": {
-    "cli-table3": "^0.6.0",
+    "cli-table3": "^0.6.3",
     "core-object": "^3.1.5",
-    "ember-cli-deploy-plugin": "^0.2.3",
-    "luxon": "^1.25.0",
+    "ember-cli-deploy-plugin": "^0.2.9",
+    "luxon": "^3.3.0",
     "rsvp": "^4.8.5"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "ember-cli": "^3.18.0",
-    "eslint": "^7.0.0",
-    "glob": "^7.1.6",
-    "mocha": "^7.1.2",
-    "release-it": "^13.6.0",
-    "release-it-lerna-changelog": "^2.3.0"
+    "ember-cli": "^3.28.6",
+    "eslint": "^8.41.0",
+    "glob": "^10.2.6",
+    "mocha": "^10.2.0",
+    "release-it": "^14.14.3",
+    "release-it-lerna-changelog": "^4.0.1"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": "14.* || 16.* || 18.* || >= 20"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
