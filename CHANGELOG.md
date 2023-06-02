@@ -1,3 +1,14 @@
+## v3.0.0 (2023-06-02)
+
+#### :boom: Breaking Change
+* [#71](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/71) [BREAKING] Update dependencies and node.js version requirements ([@lukemelia](https://github.com/lukemelia))
+* [#57](https://github.com/ember-cli-deploy/ember-cli-deploy-display-revisions/pull/57) [breaking] Switch to Github Actions for CI ([@jrjohnson](https://github.com/jrjohnson))
+
+#### Committers: 3
+- Darin Doria ([@ddoria921](https://github.com/ddoria921))
+- Jon Johnson ([@jrjohnson](https://github.com/jrjohnson))
+- Luke Melia ([@lukemelia](https://github.com/lukemelia))
+
 ## v2.1.2 (2020-10-27)
 
 #### :bug: Bug Fix
