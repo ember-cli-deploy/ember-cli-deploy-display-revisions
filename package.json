@@ -31,8 +31,8 @@
     "eslint": "^8.41.0",
     "glob": "^10.2.6",
     "mocha": "^10.2.0",
-    "release-it": "^14.14.3",
-    "release-it-lerna-changelog": "^4.0.1"
+    "release-it": "14.4.1",
+    "release-it-lerna-changelog": "^3.1.0"
   },
   "engines": {
     "node": "14.* || 16.* || 18.* || >= 20"
